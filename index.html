@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <title>Weather Dashboard</title>
 </head>
 <body>
     <div class="Dashboard__header">
         <div class="Dashboard__header-title">
             <h1>Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="City__search">
+        <div class="searchbar">
+            <h2>Search for a city:</h2>
+            <div class="input-group-text">
+                <input type="text" class="form-control" id="city-input">
+                <div class="input-group-append">
+                    <button id="add-city" class="btn btn-outline-secondary bg-primary" type="button"><ion-icon name="search-outline"></ion-icon>
+                        
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
