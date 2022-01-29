@@ -30,3 +30,9 @@ function updateCityButtons() {
         searchHistoryEl.appendChild(newButton);
     }
 }
+
+function addCityName (city) {
+    if (!searchCityList.includes(city)) {
+        searchCityList.push(city);
+    }
+}
