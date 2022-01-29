@@ -14,3 +14,8 @@ function saveSearchHistory() {
     localStorage.setItem("searchCityList", JSON.stringify(searchCityList));
 }
 
+function loadSearchHistory() {
+    lastSearch = localStorage.getItem("lastSearch") || lastSearchDefault;
+    searchCityList = JSON.parse(localStorage.getItem("searchCityList")) || [];
+}
+
