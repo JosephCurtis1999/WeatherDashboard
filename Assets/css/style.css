@@ -9,3 +9,8 @@
     font-size: 50px;
     color: cornsilk;
 }
+
+.col-md-2-card {
+    background-color: cornflowerblue;
+    margin: 1rem;
+}
