@@ -13,4 +13,9 @@
 .col-md-2-card {
     background-color: cornflowerblue;
     margin: 1rem;
+    border-radius: 10px;
+}
+
+.card-body {
+    min-height: 200px;
 }
