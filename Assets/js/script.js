@@ -9,3 +9,8 @@ var lastSearch = '';
 var lastSearchDefault = '';
 var cityNameOK = true;
 
+function saveSearchHistory() {
+    localStorage.setItem("lastSearch", lastSearch)
+    localStorage.setItem("searchCityList", JSON.stringify(searchCityList));
+}
+
