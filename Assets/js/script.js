@@ -19,3 +19,14 @@ function loadSearchHistory() {
     searchCityList = JSON.parse(localStorage.getItem("searchCityList")) || [];
 }
 
+function updateCityButtons() {
+    var searchHistoryEl = document.getElementById('search-history');
+    searchHistoryEl.innerHTML = '';
+
+    for (var i = 0; i < searchCityList.length; i++) {
+        var newButton = document.createElement("button");
+        newButton.textContent = searchCityList[i];
+        newButton.setAttribute("class", "city-button")
+        searchHistoryEl.appendChild(newButton);
+    }
+}
