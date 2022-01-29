@@ -4,4 +4,5 @@ var excludeString = "&exclude=minutely,hourly,alerts"
 var weatherUnits = "&units=imperial"
 var apiKey = "&appid=47cc7111aeaa92ded720903e4f89338c"
 var iconURL = "https://openweathermap.org/img/wn/"
+var searchCityList = [];
 
