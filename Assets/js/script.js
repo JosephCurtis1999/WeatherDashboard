@@ -36,3 +36,33 @@ function addCityName (city) {
         searchCityList.push(city);
     }
 }
+
+function displayWeatherData(city) {
+    var errorMsgDivEl = document.getElementById("city-error-msg");
+    errorMsgDivEl.innerHTML = '';
+    fetch(
+        openWeatherAPI +
+        city +
+        weatherUnits +
+        apiKey
+    ).then(function (response) {
+        if(response.ok) {
+            cityNameOK = true;
+            lastSearch = city;
+            searchCityEl = document.getElementById('search-city');
+            searchCityEl.value = lastSearch;
+            addCityName(city);
+            saveSearchHistory();
+            updateCityButtons();
+            return response.json();   
+        } else {
+            cityNameOK = false;
+            searchCityList.pop;
+            varerrorMsgDivEl = document.getElementById("city-error-msg");
+            varerrorMsgEl = document.createElement("h3");
+            errorMsgDivEl.setAttribute("class", "error");
+            errorMsgDivEl.textContent = "Please enter a real city name";
+            errorMsgDivEl.appendChild(errorMsgEl);
+        }
+    })
+}
