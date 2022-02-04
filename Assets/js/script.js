@@ -55,6 +55,28 @@ function fiveDayForecast(city) {
 
     var response = response.list;
 
+    $(document).ready(function () {
+        $("#date").text(`(${moment().format("l")})`);
+      for (i = 1; i < 7; i++) {
+        var forecastDate = $(`#date${i}`);
+        forecastDate.text(moment().add(`${i}`, "d").format("DD/MM/YYYY"));
+      }
+      for (i = 0; i < response.length; i++) {
+        $("#weatherIcon" + i).attr(
+          "src",
+          "https://openweathermap.org/img/wn/" +
+            response[i].weather[0].icon +
+            "@2x.png"
+        );
+        $("#temp" + i).text(
+          "Temp: " + Math.round(response[i].main.temp) + " °C"
+        );
+        $("#humid" + i).text("Humidity: " + response[i].main.humidity + "%");
+      }
 
-  })
+    });
+
+
+  });
 }
+
