@@ -80,3 +80,23 @@ function fiveDayForecast(city) {
   });
 }
 
+// Adding a function to bring up the UV index
+function retrieveUV(lattitude, longitude) {
+    var queryURLUV =
+    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    lattitude +
+    "&lon=" +
+    longitude +
+    "&exclude=minutely,hourly,alerts&appid=" +
+    apiKey +
+    "&units=metric";
+
+  $.ajax({
+    url: queryURLUV,
+    method: "GET",
+  }).then(function (responseUV) {
+      
+
+  })
+}
+
