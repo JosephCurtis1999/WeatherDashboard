@@ -95,7 +95,25 @@ function retrieveUV(lattitude, longitude) {
     url: queryURLUV,
     method: "GET",
   }).then(function (responseUV) {
-      
+ 
+    // these if statements are relatively similar to the workday calendar, the index background colour will change based on the uv rating
+    $("#current-uvi").removeClass();
+
+    $("#current-uvi").text(responseUV.current.uvi);
+    
+    if (responseUV.current.uvi < 3) {
+      $("#current-uvi").css("background-color", "#3EA72D").css("color", "white");
+    } else if (responseUV.current.uvi >= 3 && responseUV.current.uvi < 6) {
+      $("#current-uvi").css("background-color", "#FFF300");
+    } else if (responseUV.current.uvi >= 6 && responseUV.current.uvi < 8) {
+      $("#current-uvi").css("background-color", "#F18B00");
+    } else if (responseUV.current.uvi >= 8 && responseUV.current.uvi < 11) {
+      $("#current-uvi").css("background-color", "#E53210").css("color", "white");
+    } else if (responseUV.current.uvi >= 11) {
+      $("#current-uvi").css("background-color", "#B567A4").css("color", "white");
+    }
+
+    $("#forecast-today").removeClass("d-none");
 
   })
 }
