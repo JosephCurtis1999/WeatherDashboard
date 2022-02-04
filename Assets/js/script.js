@@ -9,3 +9,21 @@ for (i = 0; i < savedSearch.length; i++) {
     '<button class="list-group-item" data-city="${savedSearch[i]}">${savedSearch[i]}</button>'
     );
 }
+
+function weatherDisplay(city) {
+    var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    city +
+    "&appid=" +
+    apiKey +
+    "&units=metric";
+$.ajax({
+    url: queryURL,
+    method: "GET",
+}).then(function (response) {
+
+    
+}
+);
+
+}
