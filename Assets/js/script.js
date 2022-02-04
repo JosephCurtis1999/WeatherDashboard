@@ -39,3 +39,22 @@ $.ajax({
 });
 }
 
+// Adding a function to bring in the 5 day weather forecast for a users chosen city
+function fiveDayForecast(city) {
+    var forecastfive =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    city +
+    "&appid=" +
+    apiKey +
+    "&units=metric";
+
+  $.ajax({
+    url: forecastfive,
+    method: "GET",
+  }).then(function (response) {
+
+    var response = response.list;
+
+
+  })
+}
